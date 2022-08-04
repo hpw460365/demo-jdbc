@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        new_generator_mappings: false
+        format_sql: true
+    database: mysql
+    show-sql: true
+    #当写的实体类中属性，如果对应表没有该属性的字段，会自动创建一个该属性的字段，规则是属性中大写字母处变成_小写字母的字段，比如userName变成user_name
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/new_schema?serverTimezone=UTC
+    #type: com.alibaba.druid.pool.DruidDataSource
+
+
+
+
